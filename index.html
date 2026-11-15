@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Criartshop</title>
+</head>
+
+<body>
+   <!-- CÓDIGO ATUALIZADO DO HEADER -->
+<header>
+    <div class="logoImg">
+        <img src="images/criartshop_logo.png" alt="Criartshop Logo">
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
+
+    <!-- Wrapper dos elementos de navegação para o menu lateral -->
+    <div class="nav-elements" id="navElements">
+
+        <div class="logo-menu-mobile">
+            <img src="images/criartshop_logo.png" alt="Criartshop Logo">
+        </div>
+
+        <ul class="menu">
+            <li><a href="#medalhas">Medalhas</a></li>
+            <li><a href="#trofeus">Troféus</a></li>
+            <li><a href="#placas">Placas</a></li>
+            <li><a href="#tacas">Taças</a></li>
+            <li><a href="#brinde">Brindes</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+        </ul>
+
+        <div class="busca-container">
+            <input type="text" class="inputBusca" placeholder="Pesquisar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <button class="btnLogin"><i class="bi bi-person-circle"></i> Entrar</button>
+    </div>
+
+   <!-- Container do lado direito com Busca Mobile + Carrinho Mobile + Menu Hambúrguer -->
+   <div class="header-actions-mobile">
+    <div class="btn-busca-mobile" id="btnBuscaMobile" aria-label="Abrir Busca">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+  
+    <div class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+</header>
+
+    <div class="carrosselIntro">
+        <img src="images/img_main.png" alt="Troféus de Destaque" class="active">
+        <img src="images/img_main2.png" alt="Premiações Corporativas">
+        <img src="images/img_escura.png" alt="Placas de Homenagem">
+        <img src="images/img_main2.png" alt="Qualidade e Acabamento Criartshop">
+
+        <button class="btnOrcamento">
+            <a href="orcamento.html">Solicitar Orçamento <i class="bi bi-arrow-right"></i> </a>
+        </button>
+        <div class="dots-container"></div>
+    </div>
+
+    <!-- Nova Seção de Carrossel Exemplo -->
+<section class="carrosselIntroS carrosselSecundario">
+    <img src="images/img_responsivo1.png" alt="Promoção de Troféus" class="active">
+    <img src="images/img_responsvio2.png" alt="Lançamentos em Acrílico">
+    <img src="images/img_resp_escura.png" alt="Brindes Personalizados">
+    <img src="images/img_responsivo1.png" alt="Brindes Personalizados">
+
+    <button class="btnOrcamento">
+        <a href="orcamento.html">Solicitar Orçamento <i class="bi bi-arrow-right"></i> </a>
+    </button>
+    <div class="dots-container"></div>
+</section>
+
+<!-- ========================================================== -->
+<!-- SEÇÃO DE MEDALHAS COM SELETOR DE MATERIAIS (METAL / ACRÍLICO / MDF / ZAMAC) -->
+<!-- ========================================================== -->
+<section class="containerMedalha-section" id="medalhas">
+    <div class="header-medalhas-wrapper">
+        <div class="textMedalha">
+            <h1>Medalhas</h1>
+        </div>
+        <!-- Seletor em formato de abas com Zamac incluído -->
+        <div class="medalhas-seletor">
+            <button class="btn-filtro-medalha ativa" data-categoria="metal">Metal</button>
+            <button class="btn-filtro-medalha" data-categoria="acrilico">Acrílico</button>
+            <button class="btn-filtro-medalha" data-categoria="mdf">MDF</button>
+            <button class="btn-filtro-medalha" data-categoria="zamac">Zamac</button>
+        </div>
+    </div>
+
+    <div class="cabide-wrapper">
+        <!-- Haste metálica do cabide -->
+        <div class="cabide-barra">
+            <div class="cabide-suporte-esq"></div>
+            <div class="cabide-suporte-dir"></div>
+        </div>
+
+        <!-- Trilho do Carrossel -->
+        <div class="carrosselMedalha" id="carrosselMedalha">
+            
+            <!-- OS ITENS DE METAL SERÃO RENDERIZADOS DINAMICAMENTE PELO SUPABASE AQUI -->
+
+            <!-- ITENS DE ACRÍLICO -->
+            <div class="medalha-item" data-categoria="acrilico" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medacrilico.png" alt="Medalha Acrílico" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ACRÍLICO</strong>, 4cm | Impressão UV</h4>
+                </div>
+
+            </div>
+
+            <div class="medalha-item" data-categoria="acrilico" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medacrilico.png" alt="Medalha Acrílico" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ACRÍLICO</strong>, 6cm | Impressão UV</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="acrilico" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medacrilico.png" alt="Medalha Acrílico" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ACRÍLICO</strong>, 4cm | Impressão UV</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="acrilico" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medacrilico.png" alt="Medalha Acrílico" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ACRÍLICO</strong>, 6cm | Impressão UV</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="acrilico" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medacrilico.png" alt="Medalha Acrílico" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ACRÍLICO</strong>, 4cm | Impressão UV</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="acrilico" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medacrilico.png" alt="Medalha Acrílico" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ACRÍLICO</strong>, 6cm | Impressão UV</h4>
+                </div>
+            </div>
+
+            <!-- ITENS DE MDF -->
+            <div class="medalha-item" data-categoria="mdf" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medmdf.png" alt="Medalha MDF" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>MDF-01</strong>, 8cm • Adesivado + Laca</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="mdf" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medmdf.png" alt="Medalha MDF" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>MDF-02</strong>, 10cm • Com Aplique 3D</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="mdf" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medmdf.png" alt="Medalha MDF" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>MDF-01</strong>, 8cm • Adesivado + Laca</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="mdf" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medmdf.png" alt="Medalha MDF" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>MDF-02</strong>, 10cm • Com Aplique 3D</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="mdf" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medmdf.png" alt="Medalha MDF" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>MDF-01</strong>, 8cm • Adesivado + Laca</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="mdf" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medmdf.png" alt="Medalha MDF" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>MDF-02</strong>, 10cm • Com Aplique 3D</h4>
+                </div>
+            </div>
+
+            <!-- ITENS DE ZAMAC -->
+            <div class="medalha-item" data-categoria="zamac" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medalha_zamac1.png" alt="Medalha Zamac 1" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ZAMAC</strong>, com banho envelhecido</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="zamac" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medalha_zamac1.png" alt="Medalha Zamac 2" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ZAMAC</strong>, com banho metalizado</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="zamac" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medalha_zamac1.png" alt="Medalha Zamac 1" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ZAMAC</strong>, com banho envelhecido</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="zamac" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medalha_zamac1.png" alt="Medalha Zamac 2" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ZAMAC</strong>, com banho metalizado</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="zamac" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medalha_zamac1.png" alt="Medalha Zamac 1" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ZAMAC</strong>, com banho envelhecido</h4>
+                </div>
+            </div>
+
+            <div class="medalha-item" data-categoria="zamac" style="display: none;">
+                <div class="fita-azul"></div>
+                <div class="argola-medalha"></div>
+                <img src="images/medalha_zamac1.png" alt="Medalha Zamac 2" class="medalha-pendurada-img">
+                <div class="cardMedalha">
+                    <h4><strong>ZAMAC</strong>, com banho metalizado</h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="containerTrofeu-section" id="trofeus">
+    <div class="header-medalhas-wrapper">
+        <div class="textTrofeu">
+            <h1>Troféus</h1>
+        </div>
+        <!-- Seletor em formato de abas para os troféus -->
+        <div class="medalhas-seletor">
+            <button class="btn-filtro-trofeu ativa" data-categoria-trofeu="mdf">MDF</button>
+            <button class="btn-filtro-trofeu" data-categoria-trofeu="acrilico">Acrílico</button>
+            <button class="btn-filtro-trofeu" data-categoria-trofeu="polimero">Polímero</button>
+        </div>
+    </div>
+
+    <!-- Grid onde os cards serão injetados dinamicamente via backend/JS -->
+    <div class="gridTrofeus" id="carrosselTrofeusFiltro">
+        <!-- Os itens virão do banco de dados -->
+    </div>
+</section>
+
+<section class="secao-tacas">
+    <div class="container-tacas-header">
+        <h2>Taças de Polímero</h2>
+    </div>
+
+    <!-- Container onde os cards serão inseridos (seja via HTML estático ou populados via JS) -->
+    <div class="carrosselTacas" id="gridTacas">
+        <!-- Exemplo de Card estruturado para receber dados do Supabase -->
+        <div class="cardTaca" data-id="">
+            <div class="taca-img-container">
+                <!-- A imagem virá da coluna 'imagem_url' do Supabase -->
+                <img src="" alt="Taça Personalizada" class="taca-img">
+            </div>
+            <div class="taca-info">
+                <h3 class="taca-nome">Nome da Taça</h3>
+                <div class="taca-preco">R$ <span class="val-preco">0,00</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+    <main id="brinde">
+        <section class="containerBrinde" id="brindes">
+            <div class="textBrinde">
+                <h1>Brindes Personalizados</h1>
+            </div>
+
+            <div class="cardBrinde">
+                <img src="images/img_brinde.jpeg" alt="Garrafa Squeeze Premium">
+                <h3>Garrafa Squeeze Premium</h3>
+                <h4>Alumínio 500ml • Gravação Laser</h4>
+                <div class="brinde-detalhes-extras">
+                    <span><i class="fa-solid fa-box"></i> Min. 30 unidades</span>
+                    <span><i class="fa-solid fa-palette"></i> Cores: Azul, Prata, Preto</span>
+                </div>
+                <h1>R$ 49.90</h1>
+                <div class="butons">
+                    <button class="btnWhatsapp"><i class="fa-brands fa-whatsapp"></i> Saiba Mais</button>
+                </div>
+            </div>
+    
+            <div class="cardBrinde">
+                <img src="images/img_brinde.jpeg" alt="Garrafa Térmica Inox">
+                <h3>Garrafa Térmica Inox</h3>
+                <h4>Aço Inox 750ml • Parede Dupla</h4>
+                <div class="brinde-detalhes-extras">
+                    <span><i class="fa-solid fa-box"></i> Min. 20 unidades</span>
+                    <span><i class="fa-solid fa-palette"></i> Cores: Inox, Preto, Branco</span>
+                </div>
+                <h1>R$ 79.90</h1>
+                <div class="butons">
+                    <button class="btnWhatsapp"><i class="fa-brands fa-whatsapp"></i> Saiba Mais</button>
+                </div>
+            </div>
+    
+            <div class="cardBrinde">
+                <img src="images/img_brinde.jpeg" alt="Squeeze Ecológico">
+                <h3>Squeeze Ecológico</h3>
+                <h4>Plástico Reciclável 600ml</h4>
+                <div class="brinde-detalhes-extras">
+                    <span><i class="fa-solid fa-box"></i> Min. 50 unidades</span>
+                    <span><i class="fa-solid fa-palette"></i> Cores Sortidas</span>
+                </div>
+                <h1>R$ 29.90</h1>
+                <div class="butons">
+                    <button class="btnWhatsapp"><i class="fa-brands fa-whatsapp"></i> Saiba Mais</button>
+                </div>
+            </div>
+    
+            <div class="cardBrinde">
+                <img src="images/img_brinde.jpeg" alt="Garrafa Sport Alumínio">
+                <h3>Garrafa Sport Alumínio</h3>
+                <h4>Alumínio 600ml • Com Alça</h4>
+                <div class="brinde-detalhes-extras">
+                    <span><i class="fa-solid fa-box"></i> Min. 30 unidades</span>
+                    <span><i class="fa-solid fa-palette"></i> Cores: Azul Claro, Vermelho, Prata</span>
+                </div>
+                <h1>R$ 54.90</h1>
+                <div class="butons">
+                    <button class="btnWhatsapp"><i class="fa-brands fa-whatsapp"></i> Saiba Mais</button>
+                </div>
+            </div>
+
+            <div class="cardBrinde">
+                <img src="images/img_brinde.jpeg" alt="Copo Térmico Estilo Stanley">
+                <h3>Copo Térmico Customizado</h3>
+                <h4>Aço Inox 473ml • Com Tampa</h4>
+                <div class="brinde-detalhes-extras">
+                    <span><i class="fa-solid fa-box"></i> Min. 15 unidades</span>
+                    <span><i class="fa-solid fa-palette"></i> Cores: Inox, Preto, Verde</span>
+                </div>
+                <h1>R$ 89.90</h1>
+                <div class="butons">
+                    <button class="btnWhatsapp"><i class="fa-brands fa-whatsapp"></i> Saiba Mais</button>
+                </div>
+            </div>
+
+            <div class="cardBrinde">
+                <img src="images/img_brinde.jpeg" alt="Caneca de Porcelana">
+                <h3>Caneca de Porcelana</h3>
+                <h4>Porcelana Classe A 325ml</h4>
+                <div class="brinde-detalhes-extras">
+                    <span><i class="fa-solid fa-box"></i> Min. 25 unidades</span>
+                    <span><i class="fa-solid fa-palette"></i> Branco Brilhante</span>
+                </div>
+                <h1>R$ 35.90</h1>
+                <div class="butons">
+                    <button class="btnWhatsapp"><i class="fa-brands fa-whatsapp"></i> Saiba Mais</button>
+                </div>
+            </div>
+
+            <div class="cardBrinde">
+                <img src="images/img_brinde.jpeg" alt="Squeeze Inox com Corda">
+                <h3>Squeeze Inox com Corda</h3>
+                <h4>Aço Inox 500ml • Antivazamento</h4>
+                <div class="brinde-detalhes-extras">
+                    <span><i class="fa-solid fa-box"></i> Min. 20 unidades</span>
+                    <span><i class="fa-solid fa-palette"></i> Inox Escovado</span>
+                </div>
+                <h1>R$ 64.90</h1>
+                <div class="butons">
+                    <button class="btnWhatsapp"><i class="fa-brands fa-whatsapp"></i> Saiba Mais</button>
+                </div>
+            </div>
+
+            <div class="cardBrinde">
+                <img src="images/img_brinde.jpeg" alt="Garrafa Infantil com Canudo">
+                <h3>Garrafa Infantil com Canudo</h3>
+                <h4>Plástico Atóxico 400ml</h4>
+                <div class="brinde-detalhes-extras">
+                    <span><i class="fa-solid fa-box"></i> Min. 30 unidades</span>
+                    <span><i class="fa-solid fa-palette"></i> Cores: Azul, Rosa, Amarelo</span>
+                </div>
+                <h1>R$ 39.90</h1>
+                <div class="butons">
+                    <button class="btnWhatsapp"><i class="fa-brands fa-whatsapp"></i> Saiba Mais</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="containerBio" id="sobre">
+        <div class="cardBio">
+            <img src="images/vitrine1.png" alt="">
+        </div>
+        <h1>A ARTE QUE ENTRA PARA A HISTÓRIA</h1>
+        <p>Com mais de três décadas de história e dedicação, a Cristshop se consolidou como uma verdadeira referência no mercado de premiações, troféus e homenagens. Ao longo de mais de 30 anos de trajetória, a empresa não apenas acompanhou a evolução do setor, mas também ajudou a moldar a forma como conquistas e momentos especiais são celebrados. Seja no pódio das grandes competições ou no palco das homenagens empresariais, a Cristshop continua sendo o símbolo máximo de excelência, elegância e reconhecimento. Premiar é eternizar a dedicação de quem se superou. Há mais de 30 anos, a Cristshop orgulha-se de fazer parte dos momentos mais inesquecíveis da sua jornada.</p>
+    </section>
+
+    <!-- Rodapé Elegante -->
+    <footer class="site-footer" id="contato">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Criartshop</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Rua Paraíba, 280 - Londrina, PR</p>
+                <p><i class="fa-solid fa-phone"></i> (43) 98815-1444</p>
+            </div>
+            <div class="footer-social">
+                <h4>Redes Sociais</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Criartshop. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE BUSCA MOBILE ELEGANTE -->
+<div class="modal-busca-mobile" id="modalBuscaMobile">
+    <div class="modal-busca-overlay" id="modalBuscaOverlay"></div>
+    <div class="modal-busca-content">
+        <div class="modal-busca-header">
+            <div class="modal-busca-input-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="inputBuscaModal" placeholder="Pesquisar" autocomplete="off">
+                <button type="button" class="btn-clear-search" id="btnClearSearch" aria-label="Limpar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <button class="btn-fechar-modal" id="btnFecharModal" aria-label="Fechar Modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="modal-busca-body">
+
+            <div class="search-results-counter" id="searchResultsCounter"></div>
+
+            <div class="modal-busca-resultados" id="modalBuscaResultados">
+                <!-- Resultados renderizados via JavaScript -->
+                <div class="modal-busca-empty">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <p>Digite algo para iniciar a busca de produtos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
